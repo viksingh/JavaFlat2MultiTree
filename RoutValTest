@@ -198,35 +198,23 @@ public class RoutValTest {
 
 		}
 
-/*		String envType = "";
-		String rcvList = "";
-		int condGroup = 0;
-		int counter = 0;
-		boolean active;
-		String routeObj = "";
-		String routingValue = "";
-		String logBusSys = "";
-		String interfaceName = "";*/
-
-		String rcvList_prev = "";
+	String rcvList_prev = "";
 		String envType_prev = "";
 
 		int condGroup_prev = 0;
-		int counter_prev = 0;
 		String routeObj_prev = "";
-		String routingValue_prev = "";
 		String logBusSys_prev = "";
 		String interfaceName_prev = "";
 
 		ArrayList<RoutValDisplay> routValDispList = new ArrayList<RoutValDisplay>();
-		
-		int rowCounter = 0;
 		
 		ArrayList<RoutValRoutingValues> routValRoutValList = null;
 		ArrayList<RoutValCondGroupDisplay> routValCondGroupList = null; 
 
 		ArrayList<RoutValRoutObjectDisplay> routValRoutObjList = null;
 		ArrayList<RoutValEnvironmentDisplay> routValDispEnvList = null;
+		ArrayList<RoutValInterface> routValInterfaceList = null;
+		ArrayList<RoutValReceiverList> routValReceiverList = null;
 
 		
 		
@@ -237,9 +225,11 @@ public class RoutValTest {
 			RoutValRoutObjectDisplay routValRoutObject = new RoutValRoutObjectDisplay();
 			RoutValDisplay routValDisp = new RoutValDisplay();
 			RoutValEnvironmentDisplay routValDispEnv = new RoutValEnvironmentDisplay();
-//			RoutValCondGroupDisplay rouValCondGroup = new RoutValCondGroupDisplay();
 			RoutValRoutingValues routValRoutingValue = new RoutValRoutingValues();
 			RoutValCondGroupDisplay condGroupDisplay = new RoutValCondGroupDisplay();
+			RoutValInterface routValInterface = new RoutValInterface();
+			RoutValReceiverList rcvrList = new RoutValReceiverList();
+			
 			
 			String logBusSys = sourceData.getLogSndSys();
 			String interfaceName = sourceData.getInterfaceName();
@@ -253,37 +243,30 @@ public class RoutValTest {
 
 
 
-			
-
-			
-/*
-			if (
-				( !envType.equals(envType_prev))||
-				(!logBusSys.equals(logBusSys_prev))||
-				(condGroup != condGroup_prev)||
-				(!routeObj.equals(routeObj_prev))||
-				(!rcvList.equals(rcvList_prev))||
-				(!interfaceName.equals(interfaceName_prev)))
-					 {
-				routValRoutValList = new ArrayList<RoutValRoutingValues>(); // Initialize the array list
+			if (!logBusSys.equals(logBusSys_prev)){
+				routValDisp.setLogSndSys(logBusSys);				
 				
-				routValDispEnv.setRoutValue(routValRoutValList);
-				routValDispEnv.setEnvType(envType);
-				routValDispEnvList.add(routValDispEnv);
-					 }
-
-//In either case, add values to the list			
-			routValRoutValList.add(routValRoutingValue);*/
-			
-
-
-// If any of the values differ in the tree, create a new list			
+				routValDispList.add(routValDisp);
+				
+				routValInterfaceList = new ArrayList<RoutValInterface>();
+				routValDisp.setRoutValInterfaceList(routValInterfaceList);				
+				
+			}
 
 			
-			
+			if ((!logBusSys.equals(logBusSys_prev))
+					|| (!interfaceName.equals(interfaceName_prev))){
+				
+				routValInterface.setInterfaceName(interfaceName);
+				routValInterfaceList.add(routValInterface);
+				
+				routValReceiverList = new ArrayList<RoutValReceiverList>();
+				routValInterface.setRoutValRcvrList(routValReceiverList);
+				
+			}
 
 			
-			
+
 			
 			if ((!logBusSys.equals(logBusSys_prev))
 					|| (!interfaceName.equals(interfaceName_prev))
@@ -293,15 +276,20 @@ public class RoutValTest {
 
 
 
-				routValDisp.setLogSndSys(logBusSys);
-				routValDisp.setRcvList(rcvList);
-				routValDisp.setInterfaceName(interfaceName);
+
+				rcvrList.setRcvList(rcvList);
+				routValReceiverList.add(rcvrList);
 				
-				routValDispList.add(routValDisp);
+				
 				
 				routValCondGroupList = new ArrayList<RoutValCondGroupDisplay>();
-				routValDisp.setRoutValGroupList(routValCondGroupList);				
+				rcvrList.setRoutValcondGroupDisplayList(routValCondGroupList);				
 			}
+			
+			
+			
+			
+			
 			
 			
 			if ( (!logBusSys.equals(logBusSys_prev))||
@@ -374,9 +362,7 @@ public class RoutValTest {
 			condGroup_prev = condGroup;
 			routeObj_prev = routeObj;
 			envType_prev = envType;
-			counter_prev = counter;
 
-			//
 
 		}
 		
@@ -389,12 +375,17 @@ public class RoutValTest {
 		
 		for (RoutValDisplay routValDisp2 : routValDispList) {
 
-			System.out.println("Top Level Value " + routValDisp2.getLogSndSys()
-					+ " *--*" + routValDisp2.getInterfaceName() + " *--*"
-					+ routValDisp2.getRcvList());
+			System.out.println(" Bus Sys* " + routValDisp2.getLogSndSys());{
+				
+				for (RoutValInterface routValInt : routValDisp2.getRoutValInterfaceList()) {
+					
+					System.out.println(" Interface ** " + routValInt.getInterfaceName());
+				
+					for (RoutValReceiverList routValRcvrList : routValInt.getRoutValRcvrList()){
+						
+						System.out.println(" ReceiverList *** " + routValRcvrList.getRcvList());
 
-			for (RoutValCondGroupDisplay routValCondDisplay : routValDisp2
-					.getRoutValGroupList()) {
+			for (RoutValCondGroupDisplay routValCondDisplay : routValRcvrList.getRoutValcondGroupDisplayList()) {
 				System.out.println(" Cond Group : **** ***********" + routValCondDisplay.getCondGroup());
 
 				
@@ -417,9 +408,9 @@ public class RoutValTest {
 				}
 			
 			
-			}
+			}}}
 
 		}
+			}
 
 	}
-}
