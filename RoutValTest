@@ -1,0 +1,425 @@
+package org.saki;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+import org.saki.display.RoutValCondGroupDisplay;
+import org.saki.display.RoutValDisplay;
+import org.saki.display.RoutValEnvironmentDisplay;
+import org.saki.display.RoutValRoutObjectDisplay;
+import org.saki.display.RoutValRoutingValues;
+
+public class RoutValTest {
+
+	public static void main(String[] args) {
+
+		ArrayList<RoutVal> routValList = new ArrayList<RoutVal>();
+
+		routValList.add(new RoutVal("DV", 669, "RCV_B", 1, 1,
+				"true", "ROUT_OBJ1", "X1",
+				"SND_B",
+				"INT_B"));
+		routValList.add(new RoutVal("DV", 669, "RCV_B", 1, 2,
+				"true", "ROUT_OBJ2", "3607",
+				"SND_B",
+				"INT_B"));
+		routValList.add(new RoutVal("DV", 669, "RCV_B", 2, 1,
+				"true", "ROUT_OBJ1", "X2",
+				"SND_B",
+				"INT_B"));
+		routValList.add(new RoutVal("DV", 669, "RCV_B", 2, 2,
+				"true", "ROUT_OBJ2", "3607",
+				"SND_B",
+				"INT_B"));
+		routValList.add(new RoutVal("DV", 669, "RCV_B", 3, 1,
+				"true", "ROUT_OBJ1", "X3",
+				"SND_B",
+				"INT_B"));
+		routValList.add(new RoutVal("DV", 669, "RCV_B", 3, 2,
+				"true", "ROUT_OBJ2", "3607",
+				"SND_B",
+				"INT_B"));
+
+		routValList.add(new RoutVal("RT", 669, "RCV_B", 1, 1,
+				"true", "ROUT_OBJ1", "X1",
+				"SND_B",
+				"INT_B"));
+		routValList.add(new RoutVal("RT", 669, "RCV_B", 1, 2,
+				"true", "ROUT_OBJ2", "3607",
+				"SND_B",
+				"INT_B"));
+		routValList.add(new RoutVal("RT", 669, "RCV_B", 2, 1,
+				"true", "ROUT_OBJ1", "X2",
+				"SND_B",
+				"INT_B"));
+		routValList.add(new RoutVal("RT", 669, "RCV_B", 2, 2,
+				"true", "ROUT_OBJ2", "3607",
+				"SND_B",
+				"INT_B"));
+		routValList.add(new RoutVal("RT", 669, "RCV_B", 3, 1,
+				"true", "ROUT_OBJ1", "X3",
+				"SND_B",
+				"INT_B"));
+		routValList.add(new RoutVal("RT", 669, "RCV_B", 3, 2,
+				"true", "ROUT_OBJ2", "3607",
+				"SND_B",
+				"INT_B"));
+
+		routValList.add(new RoutVal("PP", 669, "RCV_B", 1, 1,
+				"true", "ROUT_OBJ1", "X1",
+				"SND_B",
+				"INT_B"));
+		routValList.add(new RoutVal("PP", 669, "RCV_B", 1, 2,
+				"true", "ROUT_OBJ2", "3607",
+				"SND_B",
+				"INT_B"));
+		routValList.add(new RoutVal("PP", 669, "RCV_B", 2, 1,
+				"true", "ROUT_OBJ1", "X2",
+				"SND_B",
+				"INT_B"));
+		routValList.add(new RoutVal("PP", 669, "RCV_B", 2, 2,
+				"true", "ROUT_OBJ2", "3607",
+				"SND_B",
+				"INT_B"));
+		routValList.add(new RoutVal("PP", 669, "RCV_B", 3, 1,
+				"true", "ROUT_OBJ1", "X3",
+				"SND_B",
+				"INT_B"));
+		routValList.add(new RoutVal("PP", 669, "RCV_B", 3, 2,
+				"true", "ROUT_OBJ2", "3607",
+				"SND_B",
+				"INT_B"));
+
+		routValList.add(new RoutVal("PR", 669, "RCV_B", 1, 1,
+				"true", "ROUT_OBJ1", "X1",
+				"SND_B",
+				"INT_B"));
+		routValList.add(new RoutVal("PR", 669, "RCV_B", 1, 2,
+				"true", "ROUT_OBJ2", "3607",
+				"SND_B",
+				"INT_B"));
+		routValList.add(new RoutVal("PR", 669, "RCV_B", 2, 1,
+				"true", "ROUT_OBJ1", "X2",
+				"SND_B",
+				"INT_B"));
+		routValList.add(new RoutVal("PR", 669, "RCV_B", 2, 2,
+				"true", "ROUT_OBJ2", "3607",
+				"SND_B",
+				"INT_B"));
+		routValList.add(new RoutVal("PR", 669, "RCV_B", 3, 1,
+				"true", "ROUT_OBJ1", "X3",
+				"SND_B",
+				"INT_B"));
+		routValList.add(new RoutVal("PR", 669, "RCV_B", 3, 2,
+				"true", "ROUT_OBJ2", "3607",
+				"SND_B",
+				"INT_B"));
+
+		routValList.add(new RoutVal("DV", 176, "RCV_C", 1, 1,
+				"true", "INVOIC_RCVPRN", "MYETSTS001", "SND_C",
+				"INVOIC.INVOIC02"));
+		routValList.add(new RoutVal("DV", 176, "RCV_C", 1, 2,
+				"true", "INVOIC_RCVPRN", "SGETSTS001", "SND_C",
+				"INVOIC.INVOIC02"));
+		routValList.add(new RoutVal("DV", 1335, "RCV_C", 1,
+				3, "true", "INVOIC_RCVPRN", "AUETSTS001", "SND_D",
+				"INVOIC.INVOIC02"));
+		routValList.add(new RoutVal("DV", 1335, "RCV_C", 1,
+				4, "true", "INVOIC_RCVPRN", "CNETSTS001", "SND_D",
+				"INVOIC.INVOIC02"));
+		routValList.add(new RoutVal("DV", 1335, "RCV_C", 1,
+				5, "true", "INVOIC_RCVPRN", "EGETSTS001", "SND_D",
+				"INVOIC.INVOIC02"));
+		routValList.add(new RoutVal("DV", 1335, "RCV_C", 1,
+				6, "true", "INVOIC_RCVPRN", "GHETSTS001", "SND_D",
+				"INVOIC.INVOIC02"));
+
+		routValList.add(new RoutVal("RT", 176, "RCV_C", 1, 1,
+				"true", "INVOIC_RCVPRN", "MYETSTS001", "SND_C",
+				"INVOIC.INVOIC02"));
+		routValList.add(new RoutVal("RT", 176, "RCV_C", 1, 2,
+				"true", "INVOIC_RCVPRN", "SGETSTS001", "SND_C",
+				"INVOIC.INVOIC02"));
+		routValList.add(new RoutVal("RT", 1335, "RCV_C", 1,
+				3, "true", "INVOIC_RCVPRN", "AUETSTS001", "SND_D",
+				"INVOIC.INVOIC02"));
+		routValList.add(new RoutVal("RT", 1335, "RCV_C", 1,
+				4, "true", "INVOIC_RCVPRN", "CNETSTS001", "SND_D",
+				"INVOIC.INVOIC02"));
+		routValList.add(new RoutVal("RT", 1335, "RCV_C", 1,
+				5, "true", "INVOIC_RCVPRN", "EGETSTS001", "SND_D",
+				"INVOIC.INVOIC02"));
+		routValList.add(new RoutVal("RT", 1335, "RCV_C", 1,
+				6, "true", "INVOIC_RCVPRN", "GHETSTS001", "SND_D",
+				"INVOIC.INVOIC02"));
+
+		routValList.add(new RoutVal("PP", 176, "RCV_C", 1, 1,
+				"true", "INVOIC_RCVPRN", "MYETSTS001", "SND_C",
+				"INVOIC.INVOIC02"));
+		routValList.add(new RoutVal("PP", 176, "RCV_C", 1, 2,
+				"true", "INVOIC_RCVPRN", "SGETSTS001", "SND_C",
+				"INVOIC.INVOIC02"));
+		routValList.add(new RoutVal("PP", 1335, "RCV_C", 1,
+				3, "true", "INVOIC_RCVPRN", "AUETSTS001", "SND_D",
+				"INVOIC.INVOIC02"));
+		routValList.add(new RoutVal("PP", 1335, "RCV_C", 1,
+				4, "true", "INVOIC_RCVPRN", "CNETSTS001", "SND_D",
+				"INVOIC.INVOIC02"));
+		routValList.add(new RoutVal("PP", 1335, "RCV_C", 1,
+				5, "true", "INVOIC_RCVPRN", "EGETSTS001", "SND_D",
+				"INVOIC.INVOIC02"));
+		routValList.add(new RoutVal("PP", 1335, "RCV_C", 1,
+				6, "true", "INVOIC_RCVPRN", "GHETSTS001", "SND_D",
+				"INVOIC.INVOIC02"));
+
+		routValList.add(new RoutVal("PR", 176, "RCV_C", 1, 1,
+				"true", "INVOIC_RCVPRN", "MYETSTS001", "SND_C",
+				"INVOIC.INVOIC02"));
+		routValList.add(new RoutVal("PR", 176, "RCV_C", 1, 2,
+				"true", "INVOIC_RCVPRN", "SGETSTS001", "SND_C",
+				"INVOIC.INVOIC02"));
+		routValList.add(new RoutVal("PR", 1335, "RCV_C", 1,
+				3, "true", "INVOIC_RCVPRN", "AUETSTS002", "SND_D",
+				"INVOIC.INVOIC02"));
+		routValList.add(new RoutVal("PR", 1335, "RCV_C", 1,
+				4, "true", "INVOIC_RCVPRN", "CNETSTS001", "SND_D",
+				"INVOIC.INVOIC02"));
+		routValList.add(new RoutVal("PR", 1335, "RCV_C", 1,
+				5, "true", "INVOIC_RCVPRN", "EGETSTS001", "SND_D",
+				"INVOIC.INVOIC02"));
+		routValList.add(new RoutVal("PR", 1335, "RCV_C", 1,
+				6, "true", "INVOIC_RCVPRN", "GHETSTS001", "SND_D",
+				"INVOIC.INVOIC02"));
+
+		Collections.sort(routValList);
+
+		for (RoutVal sourceData : routValList) {
+			System.out.println(sourceData);
+
+		}
+
+/*		String envType = "";
+		String rcvList = "";
+		int condGroup = 0;
+		int counter = 0;
+		boolean active;
+		String routeObj = "";
+		String routingValue = "";
+		String logBusSys = "";
+		String interfaceName = "";*/
+
+		String rcvList_prev = "";
+		String envType_prev = "";
+
+		int condGroup_prev = 0;
+		int counter_prev = 0;
+		String routeObj_prev = "";
+		String routingValue_prev = "";
+		String logBusSys_prev = "";
+		String interfaceName_prev = "";
+
+		ArrayList<RoutValDisplay> routValDispList = new ArrayList<RoutValDisplay>();
+		
+		int rowCounter = 0;
+		
+		ArrayList<RoutValRoutingValues> routValRoutValList = null;
+		ArrayList<RoutValCondGroupDisplay> routValCondGroupList = null; 
+
+		ArrayList<RoutValRoutObjectDisplay> routValRoutObjList = null;
+		ArrayList<RoutValEnvironmentDisplay> routValDispEnvList = null;
+
+		
+		
+			
+
+		for (RoutVal sourceData : routValList) {
+
+			RoutValRoutObjectDisplay routValRoutObject = new RoutValRoutObjectDisplay();
+			RoutValDisplay routValDisp = new RoutValDisplay();
+			RoutValEnvironmentDisplay routValDispEnv = new RoutValEnvironmentDisplay();
+//			RoutValCondGroupDisplay rouValCondGroup = new RoutValCondGroupDisplay();
+			RoutValRoutingValues routValRoutingValue = new RoutValRoutingValues();
+			RoutValCondGroupDisplay condGroupDisplay = new RoutValCondGroupDisplay();
+			
+			String logBusSys = sourceData.getLogSndSys();
+			String interfaceName = sourceData.getInterfaceName();
+			String rcvList = sourceData.getRcvList();
+			int condGroup = sourceData.getCondGroup();
+			String routeObj = sourceData.getRouteObj();
+			String envType = sourceData.getEnvType();
+			Boolean active = sourceData.getActive();
+			int counter = sourceData.getCounter();
+			String routingValue = sourceData.getRoutingValue();
+
+
+
+			
+
+			
+/*
+			if (
+				( !envType.equals(envType_prev))||
+				(!logBusSys.equals(logBusSys_prev))||
+				(condGroup != condGroup_prev)||
+				(!routeObj.equals(routeObj_prev))||
+				(!rcvList.equals(rcvList_prev))||
+				(!interfaceName.equals(interfaceName_prev)))
+					 {
+				routValRoutValList = new ArrayList<RoutValRoutingValues>(); // Initialize the array list
+				
+				routValDispEnv.setRoutValue(routValRoutValList);
+				routValDispEnv.setEnvType(envType);
+				routValDispEnvList.add(routValDispEnv);
+					 }
+
+//In either case, add values to the list			
+			routValRoutValList.add(routValRoutingValue);*/
+			
+
+
+// If any of the values differ in the tree, create a new list			
+
+			
+			
+
+			
+			
+			
+			if ((!logBusSys.equals(logBusSys_prev))
+					|| (!interfaceName.equals(interfaceName_prev))
+					|| (!rcvList.equals(rcvList_prev))
+					) 
+			{
+
+
+
+				routValDisp.setLogSndSys(logBusSys);
+				routValDisp.setRcvList(rcvList);
+				routValDisp.setInterfaceName(interfaceName);
+				
+				routValDispList.add(routValDisp);
+				
+				routValCondGroupList = new ArrayList<RoutValCondGroupDisplay>();
+				routValDisp.setRoutValGroupList(routValCondGroupList);				
+			}
+			
+			
+			if ( (!logBusSys.equals(logBusSys_prev))||
+					(!rcvList.equals(rcvList_prev))||
+					(!interfaceName.equals(interfaceName_prev) ||
+					(condGroup != condGroup_prev)
+					
+					))
+				
+			{
+											
+				condGroupDisplay.setCondGroup(condGroup);
+				
+				routValCondGroupList.add(condGroupDisplay);				
+				
+				routValRoutObjList = new ArrayList<RoutValRoutObjectDisplay>();
+				condGroupDisplay.setRoutObject(routValRoutObjList);				
+
+			}			
+			
+			if ( (!logBusSys.equals(logBusSys_prev))||
+					(condGroup != condGroup_prev) ||
+					(!rcvList.equals(rcvList_prev))||
+					(!interfaceName.equals(interfaceName_prev)||					
+					(!routeObj.equals(routeObj_prev))
+					
+					))
+						 { 
+				
+				routValRoutObject.setRouteObj(routeObj);
+				routValRoutObjList.add(routValRoutObject);
+				
+				routValDispEnvList = new ArrayList<RoutValEnvironmentDisplay>();
+				routValRoutObject.setRoutingEnvValue(routValDispEnvList);
+				
+	
+				
+				
+						 }
+			
+			if ( (!logBusSys.equals(logBusSys_prev))||
+					(condGroup != condGroup_prev) ||
+					(!rcvList.equals(rcvList_prev))||
+					(!interfaceName.equals(interfaceName_prev)||					
+					(!routeObj.equals(routeObj_prev))||
+					(!envType.equals(envType_prev))
+					))
+			{
+				routValDispEnv.setEnvType(envType);
+				
+				routValDispEnvList.add(routValDispEnv);
+				
+				routValRoutValList = new ArrayList<RoutValRoutingValues>();
+				routValDispEnv.setRoutValue(routValRoutValList);
+				
+				
+				
+			}
+			
+			routValRoutingValue.setActive(active);
+			routValRoutingValue.setCounter(counter);
+			routValRoutingValue.setRoutingValue(routingValue);
+			routValRoutValList.add(routValRoutingValue);
+			
+			
+
+			logBusSys_prev = logBusSys;
+			interfaceName_prev = interfaceName;
+			rcvList_prev = rcvList;
+			condGroup_prev = condGroup;
+			routeObj_prev = routeObj;
+			envType_prev = envType;
+			counter_prev = counter;
+
+			//
+
+		}
+		
+		System.out.println();		
+		System.out.println();
+		System.out.println(" ***************************************************");		
+		System.out.println();
+		System.out.println();
+
+		
+		for (RoutValDisplay routValDisp2 : routValDispList) {
+
+			System.out.println("Top Level Value " + routValDisp2.getLogSndSys()
+					+ " *--*" + routValDisp2.getInterfaceName() + " *--*"
+					+ routValDisp2.getRcvList());
+
+			for (RoutValCondGroupDisplay routValCondDisplay : routValDisp2
+					.getRoutValGroupList()) {
+				System.out.println(" Cond Group : **** ***********" + routValCondDisplay.getCondGroup());
+
+				
+				for (RoutValRoutObjectDisplay routObjDispl : routValCondDisplay.getRoutObject()) {
+					System.out.println(" Routing Object : **** ***********"
+							+ routObjDispl.getRouteObj());
+					
+						
+					for( RoutValEnvironmentDisplay envVal : routObjDispl.getRoutingEnvValue() ) {
+						System.out.println(" Env Value : **** *********** *******" + envVal.getEnvType());
+						
+						for( RoutValRoutingValues routVal : envVal.getRoutValue() ) {
+							System.out.println(" Routing Value : **** *********** ******* ********** " + routVal.getCounter() +   routVal.isActive() + routVal.getRoutingValue());
+
+						}
+						
+					}
+					
+					
+				}
+			
+			
+			}
+
+		}
+
+	}
+}
