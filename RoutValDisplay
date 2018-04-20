@@ -1,0 +1,40 @@
+package org.saki.display;
+
+import java.util.ArrayList;
+
+public class RoutValDisplay {
+
+	String logSndSys;
+	String interfaceName;
+	String rcvList; 
+	ArrayList<RoutValCondGroupDisplay> routValGroupList;
+	
+	public String getLogSndSys() {
+		return logSndSys;
+	}
+	public void setLogSndSys(String logSndSys) {
+		this.logSndSys = logSndSys;
+	}
+	public String getInterfaceName() {
+		return interfaceName;
+	}
+	public void setInterfaceName(String interfaceName) {
+		this.interfaceName = interfaceName;
+	}
+	public String getRcvList() {
+		return rcvList;
+	}
+	public void setRcvList(String rcvList) {
+		this.rcvList = rcvList;
+	}
+	public ArrayList<RoutValCondGroupDisplay> getRoutValGroupList() {
+		return routValGroupList;
+	}
+	public void setRoutValGroupList(
+			ArrayList<RoutValCondGroupDisplay> routValGroupList) {
+		this.routValGroupList = routValGroupList;
+	}
+	
+	
+	
+}
