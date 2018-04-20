@@ -1,0 +1,30 @@
+package org.saki.display;
+
+public class RoutValRoutingValues {
+	
+	int counter;
+	String routingValue;
+	boolean active;
+	
+	public int getCounter() {
+		return counter;
+	}
+	public void setCounter(int counter) {
+		this.counter = counter;
+	}
+	public String getRoutingValue() {
+		return routingValue;
+	}
+	public void setRoutingValue(String routingValue) {
+		this.routingValue = routingValue;
+	}
+	public boolean isActive() {
+		return active;
+	}
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+	
+	
+
+}
