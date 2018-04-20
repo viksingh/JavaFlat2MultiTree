@@ -1,0 +1,24 @@
+package org.saki.display;
+
+import java.util.ArrayList;
+
+public class RoutValRoutObjectDisplay {
+	
+	String routeObj;
+	ArrayList<RoutValEnvironmentDisplay> routingEnvValue;
+	
+	public String getRouteObj() {
+		return routeObj;
+	}
+	public void setRouteObj(String routeObj) {
+		this.routeObj = routeObj;
+	}
+	public ArrayList<RoutValEnvironmentDisplay> getRoutingEnvValue() {
+		return routingEnvValue;
+	}
+	public void setRoutingEnvValue(
+			ArrayList<RoutValEnvironmentDisplay> routingEnvValue) {
+		this.routingEnvValue = routingEnvValue;
+	}
+
+}
