@@ -1,0 +1,24 @@
+package org.saki.display;
+
+import java.util.ArrayList;
+
+public class RoutValInterface {
+	
+	String interfaceName;	
+	ArrayList<RoutValReceiverList> routValRcvrList;
+	
+	public String getInterfaceName() {
+		return interfaceName;
+	}
+	public void setInterfaceName(String interfaceName) {
+		this.interfaceName = interfaceName;
+	}
+	public ArrayList<RoutValReceiverList> getRoutValRcvrList() {
+		return routValRcvrList;
+	}
+	public void setRoutValRcvrList(ArrayList<RoutValReceiverList> routValRcvrList) {
+		this.routValRcvrList = routValRcvrList;
+	}
+	
+	
+}
