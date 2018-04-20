@@ -1,0 +1,122 @@
+package org.saki;
+
+public class RoutVal implements Comparable<RoutVal> {
+
+	private String envType;   
+	private int interfaceId;   
+	private String rcvList;   
+	private int condGroup;   
+	private int counter;
+	private boolean active;
+	private String routeObj;
+	private String routingValue;
+	private String logSndSys;
+	private String interfaceName;
+	
+	public String getEnvType() {
+		return envType;
+	}
+	public void setEnvType(String envType) {
+		this.envType = envType;
+	}
+	public int getInterfaceId() {
+		return interfaceId;
+	}
+	public void setInterfaceId(int interfaceId) {
+		this.interfaceId = interfaceId;
+	}
+	public String getRcvList() {
+		return rcvList;
+	}
+	public void setRcvList(String rcvList) {
+		this.rcvList = rcvList;
+	}
+	public int getCondGroup() {
+		return condGroup;
+	}
+	public void setCondGroup(int condGroup) {
+		this.condGroup = condGroup;
+	}
+	public int getCounter() {
+		return counter;
+	}
+	public void setCounter(int counter) {
+		this.counter = counter;
+	}
+	
+	public boolean getActive() {
+		return active;
+	}
+	public void setActive(boolean active) {
+		this.active = active;
+	}
+	
+	public String getRouteObj() {
+		return routeObj;
+	}
+	public void setRouteObj(String routeObj) {
+		this.routeObj = routeObj;
+	}
+	public String getRoutingValue() {
+		return routingValue;
+	}
+	public void setRoutingValue(String routingValue) {
+		this.routingValue = routingValue;
+	}
+	public String getLogSndSys() {
+		return logSndSys;
+	}
+	public void setLogSndSys(String logSndSys) {
+		this.logSndSys = logSndSys;
+	}
+	public String getInterfaceName() {
+		return interfaceName;
+	}
+	public void setInterfaceName(String interfaceName) {
+		this.interfaceName = interfaceName;
+	}
+	
+	public RoutVal(String envType,   
+			int interfaceId,   
+			String rcvList,   
+			int condGroup,   
+			int counter,
+			String active,
+			String routeObj,
+			String routingValue,
+			String logSndSys,
+			String interfaceName) {
+		
+		this.envType = envType;
+		this.interfaceId = interfaceId;
+		this.rcvList = rcvList;
+		this.condGroup = condGroup;
+		this.counter = counter;
+		this.active = Boolean.valueOf(active);
+		this.routeObj = routeObj;
+		this.routingValue = routingValue;
+		this.logSndSys = logSndSys;
+		this.interfaceName = interfaceName;
+		
+		
+	}
+	
+	
+	 @Override
+	   public String toString() {
+	        return ("Routing Value : " +this.envType + " | " + this.interfaceId + " | " + this.rcvList + " | " + this.condGroup + " | " + this.counter + " | " + this.active + " | " + this.routeObj + " | " + this.routingValue + " | " + this.logSndSys + " | " + this.interfaceName ); 
+	   }
+	@Override
+	public int compareTo(RoutVal o) {
+		// TODO Auto-generated method stub
+
+		String comparisongString1 = this.logSndSys + this.interfaceId + this.interfaceName + this.rcvList + this.condGroup + this.routeObj + this.envType + this.counter;
+		String comparisongString2 = o.logSndSys +  o.interfaceId + o.interfaceName + o.rcvList + o.condGroup + o.routeObj + o.envType + o.counter;
+		
+		
+		return ( comparisongString1.compareTo(comparisongString2 ));
+		
+	}
+		
+	
+}
