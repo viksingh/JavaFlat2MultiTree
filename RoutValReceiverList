@@ -1,0 +1,25 @@
+package org.saki.display;
+
+import java.util.ArrayList;
+
+public class RoutValReceiverList {
+	String rcvList; 	
+	ArrayList<RoutValCondGroupDisplay> routValcondGroupDisplayList;
+	
+	public String getRcvList() {
+		return rcvList;
+	}
+	public void setRcvList(String rcvList) {
+		this.rcvList = rcvList;
+	}
+	public ArrayList<RoutValCondGroupDisplay> getRoutValcondGroupDisplayList() {
+		return routValcondGroupDisplayList;
+	}
+	public void setRoutValcondGroupDisplayList(
+			ArrayList<RoutValCondGroupDisplay> routValcondGroupDisplayList) {
+		this.routValcondGroupDisplayList = routValcondGroupDisplayList;
+	}
+	
+	
+
+}
