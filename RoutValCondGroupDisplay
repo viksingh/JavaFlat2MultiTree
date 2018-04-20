@@ -2,28 +2,27 @@ package org.saki.display;
 
 import java.util.ArrayList;
 
-public class RoutValCondGroupDisplay {
-	
-	int condGroup;
-	ArrayList<RoutValRoutObjectDisplay> routObject;
-	
-	public int getCondGroup() {
-		return condGroup;
-	}
-	public void setCondGroup(int condGroup) {
-		this.condGroup = condGroup;
-	}
-	public ArrayList<RoutValRoutObjectDisplay> getRoutObject() {
-		return routObject;
-	}
-	public void setRoutObject(ArrayList<RoutValRoutObjectDisplay> routObject) {
-		this.routObject = routObject;
-	}
-	
+public class RoutValDisplay {
 
+	String logSndSys;
+	ArrayList<RoutValInterface> routValInterfaceList;
+	
+	public String getLogSndSys() {
+		return logSndSys;
+	}
+	public void setLogSndSys(String logSndSys) {
+		this.logSndSys = logSndSys;
+	}
+	public ArrayList<RoutValInterface> getRoutValInterfaceList() {
+		return routValInterfaceList;
+	}
+	public void setRoutValInterfaceList(
+			ArrayList<RoutValInterface> routValInterfaceList) {
+		this.routValInterfaceList = routValInterfaceList;
+	}
 	
 	
 	
 	
-
 }
+
